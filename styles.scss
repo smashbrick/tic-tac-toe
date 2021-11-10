@@ -1,0 +1,242 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+	box-sizing: border-box;
+}
+
+// Above is the Reset Css code
+
+body {
+	display: flex;
+	color: #f2ebd3;
+	font-size: 25px;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+	width: 100%;
+	background-color: #7f53ac;
+	background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+	height: 100vh;
+
+	.container {
+		border-radius: 25px;
+		padding: 50px;
+		margin: 50px;
+		background-color: #152237;
+		.title {
+			text-align: center;
+			span {
+				color: #40e0d0;
+			}
+		}
+		.zwin {
+			color: #58cd36 !important;
+		}
+
+		.status-reset {
+			margin-top: 25px;
+			font-size: 25px;
+			display: flex;
+			justify-content: space-around;
+			.reset {
+				cursor: pointer;
+				&:hover {
+					color: #a30000;
+				}
+			}
+		}
+		.game-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			grid-gap: 10px;
+			margin-top: 40px;
+			background-color: #7f53ac;
+			background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+
+			.won {
+				&:after {
+					color: #e00037 !important;
+				}
+			}
+
+			.x {
+				&:after {
+					content: "×";
+					font-size: 150px;
+					color: #8040e0;
+				}
+			}
+			.o {
+				&:after {
+					content: "〇";
+					font-size: 100px;
+					color: #40e0d0;
+				}
+			}
+
+			.game-cell {
+				height: 150px;
+				width: 150px;
+				background-color: #152237;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+}
+
+// Responsiveness
+
+@media only screen and (max-width: 640px) {
+	body {
+		font-size: 20px;
+		.container {
+			margin: 25px;
+			padding: 25px;
+			.status-reset {
+				font-size: 20px;
+			}
+			.game-grid {
+				grid-gap: 2px;
+				margin-top: 20px;
+
+				.x::after {
+					font-size: 100px;
+				}
+
+				.o::after {
+					font-size: 70px;
+				}
+				.game-cell {
+					height: 100px;
+					width: 100px;
+				}
+			}
+		}
+	}
+}
